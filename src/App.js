@@ -1,36 +1,38 @@
+import { useState } from "react";
+
 import NewExpense from "./components/NewExpense/NewExpense";
 import Expenses from "./components/Expenses/Expenses";
 
+const DUMMY_EXPENSES = [
+  {
+    id: "e1",
+    title: "Toilet Paper",
+    amount: 94.12,
+    date: new Date(2022, 7, 14),
+  },
+  {
+    id: "e2",
+    title: "Gaming Laptop",
+    amount: 123790,
+    date: new Date(2023, 2, 12),
+  },
+  {
+    id: "e3",
+    title: "Wooden Desk",
+    amount: 9675.23,
+    date: new Date(2023, 5, 19),
+  },
+];
+
 function App() {
-  const expenses = [
-    {
-      id: "e1",
-      title: "Toilet Paper",
-      amount: 94.12,
-      date: new Date(2020, 7, 14),
-    },
-    {
-      id: "e2",
-      title: "Gaming Laptop",
-      amount: 123790,
-      date: new Date(2021, 2, 12),
-    },
-    {
-      id: "e3",
-      title: "Car Insurance",
-      amount: 3594.67,
-      date: new Date(2021, 4, 28),
-    },
-    {
-      id: "e4",
-      title: "Wooden Desk",
-      amount: 9675.23,
-      date: new Date(2021, 5, 19),
-    },
-  ];
+  const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
 
   const addExpenseHandler = (expense) => {
-    console.log("Inside App.js: " + expense);
+    // setExpenses([expense, ...expenses]);
+
+    // Functional approach (as below) using previous state is preferred.
+
+    setExpenses((prevExpenses) => [expense, ...prevExpenses]);
   };
 
   return (

@@ -15,33 +15,15 @@ function ExpenseForm(props) {
 
   const titleChangeHandler = (event) => {
     setEnteredTitle(event.target.value);
-
     // setExpenseInput({ ...expenseInput, enteredTitle: event.target.value });
-
-    // Functional approach (as below) using previous state is preferred.
-    // setExpenseInput((previousState) => {
-    //   return { ...previousState, enteredTitle: event.target.value };
-    // });
   };
   const amountChangeHandler = (event) => {
     setEnteredAmount(event.target.value);
-
     // setExpenseInput({ ...expenseInput, enteredAmount: event.target.value });
-
-    // Functional approach (as below) using previous state is preferred.
-    // setExpenseInput((previousState) => {
-    //   return { ...previousState, enteredAmount: event.target.value };
-    // });
   };
   const dateChangeHandler = (event) => {
     setEnteredDate(event.target.value);
-
     // setExpenseInput({ ...expenseInput, enteredDate: event.target.value });
-
-    // Functional approach (as below) using previous state is preferred.
-    // setExpenseInput((previousState) => {
-    //   return { ...previousState, enteredDate: event.target.value };
-    // });
   };
 
   const submitHandler = (event) => {
@@ -58,6 +40,10 @@ function ExpenseForm(props) {
     setEnteredTitle("");
     setEnteredAmount("");
     setEnteredDate("");
+  };
+
+  const abortHandler = () => {
+    props.onCancelExpenseData();
   };
 
   return (
@@ -93,6 +79,9 @@ function ExpenseForm(props) {
         </div>
       </div>
       <div className="new-expense__actions">
+        <button type="button" onClick={abortHandler}>
+          Cancel Expense
+        </button>
         <button type="submit">Add Expense</button>
       </div>
     </form>
