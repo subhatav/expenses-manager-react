@@ -1,20 +1,20 @@
 import { useState } from "react";
 
-import NewExpense from "./components/NewExpense/NewExpense";
 import Expenses from "./components/Expenses/Expenses";
+import NewExpense from "./components/NewExpense/NewExpense";
 
 const DUMMY_EXPENSES = [
   {
     id: "e1",
-    title: "Toilet Paper",
-    amount: 94.12,
-    date: new Date(2022, 7, 14),
-  },
-  {
-    id: "e2",
     title: "Gaming Laptop",
     amount: 123790,
     date: new Date(2023, 2, 12),
+  },
+  {
+    id: "e2",
+    title: "Toilet Paper",
+    amount: 94.12,
+    date: new Date(2022, 7, 14),
   },
   {
     id: "e3",
@@ -31,7 +31,6 @@ function App() {
     // setExpenses([expense, ...expenses]);
 
     // Functional approach (as below) using previous state is preferred.
-
     setExpenses((prevExpenses) => [expense, ...prevExpenses]);
   };
 
