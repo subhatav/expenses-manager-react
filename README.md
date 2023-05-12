@@ -1,4 +1,4 @@
-# Projects Manager
+# Expenses Recorder
 
 This *tool* is **developed** using:
 * **Node Package Manager** as *foundation*;
@@ -55,7 +55,7 @@ For **production** purposes, *follow* these **steps**:
 
 >npm run build
 
-1. **Run** this *command* to **host** the optimized *React* project:
+3. **Run** this *command* to **host** the optimized *React* project:
 
 >serve build --single
 
