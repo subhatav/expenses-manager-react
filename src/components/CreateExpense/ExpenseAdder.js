@@ -2,9 +2,9 @@ import { useState } from "react";
 
 import ExpenseForm from "./ExpenseForm";
 
-import "./NewExpense.css";
+import "./ExpenseAdder.css";
 
-function NewExpense(props) {
+function ExpenseAdder(props) {
   const [isCreating, setIsCreating] = useState(false);
 
   const showExpenseFormHandler = () => {
@@ -41,4 +41,4 @@ function NewExpense(props) {
   );
 }
 
-export default NewExpense;
+export default ExpenseAdder;

@@ -1,4 +1,4 @@
-import Chart from "../Chart/Chart";
+import Chart from "../DrawChart/Chart";
 
 function ExpensesChart(props) {
   const chartDataPoints = [
